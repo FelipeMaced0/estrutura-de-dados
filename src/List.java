@@ -9,12 +9,12 @@
  * @author Aluno
  */
 public class List {
-    Satellite head;
+    Anchor head;
 
     public List() {
     }
     
-    public void add(Satellite x){
+    public void add(Anchor x){
         x.next = head;
         if(head!=null){
             head.prev = x;
@@ -23,7 +23,7 @@ public class List {
         x.prev = null;
     }
     
-    public void sub(Satellite x){
+    public void sub(Anchor x){
         if(x.prev!=null){
             x.prev.next = x.next;
         }
@@ -36,7 +36,7 @@ public class List {
     }
     
     public String print(){
-        Satellite x = head;
+        Anchor x = head;
         String s="";
         while(x!=null){
             s+=x;

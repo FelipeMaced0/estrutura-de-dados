@@ -50,12 +50,12 @@ public class L1Q3 {
             //cria e atribuí, a uma âncora do tipo inteiro, satélites do tipo float
             for(int i=0;i<arrayLine[0].length;i++){
                 int numInt = Integer.parseInt(arrayLine[0][i]);
-                IntNum = new Anchor(numInt);
+                IntNum = new Anchor(numInt,arrayLine[1].length+1);
                 for(int j=0;j<arrayLine[1].length;j++){
                     float numFloat = Float.parseFloat(arrayLine[1][j]);
                     float diference = numFloat-numInt;
                     if(diference>=0 && diference<1){
-                        IntNum.addSatellite(new Satellite(numFloat));
+                        IntNum.addSatellite(numFloat);
                     }
                 }
                 list.add(IntNum);
