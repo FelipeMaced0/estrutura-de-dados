@@ -46,4 +46,14 @@ public class Insertion <T extends Comparable>{
         }
         System.out.println(array);
     }
+    
+    
+    public static void main(String [] args){
+        String a [] = {"11","9","6","4",};
+        Insertion<String> in = new Insertion();
+        
+        in.sort(a);
+        in.printArray(a);
+        
+    }
 }

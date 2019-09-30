@@ -29,7 +29,7 @@ public class L1Q3 {
     
     public static void main(String [] args){
         Arquivo file = new Arquivo("src/L1Q3.in","src/L1Q3.out");
-        Insertion<String> insertion = new Insertion();
+        Insertion insertion = new Insertion();
         List list = new List();
         Anchor IntNum;
         String out="[";
@@ -38,26 +38,27 @@ public class L1Q3 {
             String line =file.readLine();
             line = line.substring(line.indexOf(" ")+1);
             String temp[] = line.split("LI");
-            String arrayLine [][] = new String[temp.length][];
+            Integer intValues [];
+            Float  floatValues [];
             
-            //separa e ordena os números de forma decrescente
-            for(int i=0;i<temp.length;i++){
-                arrayLine[i] = temp[i].trim().split(" ");
-                if(i==0){
-                    insertion.reverseSort(arrayLine[0]);
-                }
-                else{
-                    insertion.sort(arrayLine[1]);
-                }
-            }
+            
+
+
+            intValues = paraArrayInt(temp[0].trim().split(" "));
+            floatValues = paraArrayFloat(temp[1].trim().split(" "));
+            insertion.reverseSort(intValues);
+            insertion.sort(floatValues);
+            
+            
+            
             
             
             //cria e atribuí, a uma âncora do tipo inteiro, satélites do tipo float
-            for(int i=0;i<arrayLine[0].length;i++){
-                int numInt = Integer.parseInt(arrayLine[0][i]);
-                IntNum = new Anchor(numInt,arrayLine[1].length+1);
-                for(int j=0;j<arrayLine[1].length;j++){
-                    float numFloat = Float.parseFloat(arrayLine[1][j]);
+            for(int i=0;i<intValues.length;i++){
+                int numInt = intValues[i];
+                IntNum = new Anchor(numInt,floatValues.length+1);
+                for(int j=0;j<floatValues.length;j++){
+                    float numFloat = floatValues[j];
                     float diference = numFloat-numInt;
                     if(diference>=0 && diference<1){
                         IntNum.addSatellite(numFloat);
