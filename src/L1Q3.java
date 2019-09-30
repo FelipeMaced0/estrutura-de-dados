@@ -47,6 +47,7 @@ public class L1Q3 {
                 
             }
             
+            
             //cria e atribuí, a uma âncora do tipo inteiro, satélites do tipo float
             for(int i=0;i<arrayLine[0].length;i++){
                 int numInt = Integer.parseInt(arrayLine[0][i]);
