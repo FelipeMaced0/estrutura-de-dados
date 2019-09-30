@@ -43,7 +43,12 @@ public class L1Q3 {
             //separa e ordena os números de forma decrescente
             for(int i=0;i<temp.length;i++){
                 arrayLine[i] = temp[i].trim().split(" ");
-                insertion.sort(arrayLine[i]);
+                if(i==0){
+                    insertion.reverseSort(arrayLine[0]);
+                }
+                else{
+                    insertion.sort(arrayLine[1]);
+                }
             }
             
             
