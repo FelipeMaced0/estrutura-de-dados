@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Aluno
+ * @author Felipe Macedo
  * @param <T>
  */
 public class Anchor<T>{

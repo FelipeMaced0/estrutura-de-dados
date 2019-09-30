@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Aluno
+ * @author Felipe Macedo
  */
 public class List {
     Anchor head;
