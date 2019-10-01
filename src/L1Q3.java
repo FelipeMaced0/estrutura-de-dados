@@ -38,18 +38,21 @@ public class L1Q3 {
             String line =file.readLine();
             line = line.substring(line.indexOf(" ")+1);
             String temp[] = line.split("LI");
-            Integer intValues [];
-            Float  floatValues [];
+            Integer intValues []={0};
+            Float  floatValues []={0f};
             
             
 
-
-            intValues = paraArrayInt(temp[0].trim().split(" "));
-            floatValues = paraArrayFloat(temp[1].trim().split(" "));
+            try{
+            
+                intValues = paraArrayInt(temp[0].trim().split(" "));
+                floatValues = paraArrayFloat(temp[1].trim().split(" "));
+                
+            }catch(ArrayIndexOutOfBoundsException e){
+            
+            }
             insertion.reverseSort(intValues);
             insertion.sort(floatValues);
-            
-            
             
             
             
@@ -67,7 +70,11 @@ public class L1Q3 {
                 list.add(IntNum);
             }
             String aux = list.print();
-            aux  = aux .substring(0,aux.lastIndexOf("->"));
+            System.out.println(aux);
+            int index = aux.lastIndexOf("->");
+            if(index>0){
+                aux  = aux .substring(0,index);
+            } 
             out = out + aux  +"]\n";
         }
         out = out.substring(0,out.length()-1);

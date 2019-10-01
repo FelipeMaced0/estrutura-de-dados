@@ -58,10 +58,10 @@ public class Anchor<T>{
     public String toString(){
         String satellRepre = satellites.print();
         if(satellRepre.length()>=2){
-            satellRepre = "("+satellRepre.substring(0,satellRepre.length()-2)+")->";
+            satellRepre = "("+satellRepre.substring(0,satellRepre.length()-2)+")";
         }
         
         System.out.println(key);
-        return String.valueOf(key)+satellRepre;
+        return String.valueOf(key)+satellRepre+"->";
    }
 }
