@@ -35,19 +35,33 @@ public class L1Q3 {
         String out="[";
         
         while(!file.isEndOfFile()){
-            String line =file.readLine();
+            String line = file.readLine();
             line = line.substring(line.indexOf(" ")+1);
-            String temp[] = line.split("LI");
             Integer intValues []={0};
             Float  floatValues []={0f};
+            int le=line.indexOf("LE");
+            String temp[];
+            
+            
+            if(le==0){
+                temp = line.split("LI");
+            }
+            else{
+                temp = line.split("LE");
+            }
+            
             
             
 
             try{
-            
-                intValues = paraArrayInt(temp[0].trim().split(" "));
-                floatValues = paraArrayFloat(temp[1].trim().split(" "));
-                
+                if(le==0){
+                    intValues = paraArrayInt(temp[0].trim().split(" "));
+                    floatValues = paraArrayFloat(temp[1].trim().split(" "));
+                }
+                else{
+                    intValues = paraArrayInt(temp[1].trim().split(" "));
+                    floatValues = paraArrayFloat(temp[0].trim().split(" "));
+                }
             }catch(ArrayIndexOutOfBoundsException e){
             
             }
