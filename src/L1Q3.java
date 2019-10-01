@@ -67,7 +67,7 @@ public class L1Q3 {
                 list.add(IntNum);
             }
             String aux = list.print();
-            aux  = aux .substring(0,aux.length()-2);
+            aux  = aux .substring(0,aux.lastIndexOf("->"));
             out = out + aux  +"]\n";
         }
         out = out.substring(0,out.length()-1);
