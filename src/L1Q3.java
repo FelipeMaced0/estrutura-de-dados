@@ -37,34 +37,14 @@ public class L1Q3 {
         while(!file.isEndOfFile()){
             String line = file.readLine();
             line = line.substring(line.indexOf(" ")+1);
-            Integer intValues []={0};
-            Float  floatValues []={0f};
-            int le=line.indexOf("LE");
+            Integer intValues [];
+            Float  floatValues [];
             String temp[];
             
-            
-            if(le==0){
-                temp = line.split("LI");
-            }
-            else{
-                temp = line.split("LE");
-            }
-            
-            
-            
+            temp = line.split("LI");
 
-            try{
-                if(le==0){
-                    intValues = paraArrayInt(temp[0].trim().split(" "));
-                    floatValues = paraArrayFloat(temp[1].trim().split(" "));
-                }
-                else{
-                    intValues = paraArrayInt(temp[1].trim().split(" "));
-                    floatValues = paraArrayFloat(temp[0].trim().split(" "));
-                }
-            }catch(ArrayIndexOutOfBoundsException e){
-            
-            }
+            intValues = paraArrayInt(temp[0].trim().split(" "));
+            floatValues = paraArrayFloat(temp[1].trim().split(" "));
             insertion.reverseSort(intValues);
             insertion.sort(floatValues);
             

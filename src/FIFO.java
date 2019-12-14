@@ -3,18 +3,18 @@
  *
  * @author Felipe Macedo
  */
-public class circularList  {
+public class FIFO  {
     Float elements [];
     int head;
     int tail;
     
-    public circularList(int Max){
+    public FIFO(int Max){
         elements = new Float[Max];
         head = 0;
         tail = 0;
     }
     
-    public circularList(){
+    public FIFO(){
         head = 0;
         tail = 0;
     }
@@ -60,7 +60,7 @@ public class circularList  {
     }
     
     public static void main(String [] args){
-        circularList c = new circularList(4);
+        FIFO c = new FIFO(4);
         
         c.add(1);
         c.add(2);

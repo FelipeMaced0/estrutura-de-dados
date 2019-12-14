@@ -13,11 +13,11 @@ public class Anchor<T>{
     T key;
     Anchor next;
     Anchor prev;
-    circularList satellites;
+    FIFO satellites;
     
     public Anchor(T value, int Max){
         this.key = value;
-        satellites = new circularList(Max);
+        satellites = new FIFO(Max);
     }
     
     public Anchor(T value, Anchor next, Anchor previus){

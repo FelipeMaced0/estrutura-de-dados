@@ -40,7 +40,7 @@ public class L1Q1 {
             }
         }
         
-        return out;
+        return out.trim();
     }
     
     public static Integer [] converterArray(String [] line){

@@ -41,7 +41,7 @@ public class L1Q2 {
                     stackNames.push(name);
                 } 
             }
-            out = out + "\n";
+            out = out.trim() + "\n";
             
         }
         out = out.substring(0,out.length()-1);
